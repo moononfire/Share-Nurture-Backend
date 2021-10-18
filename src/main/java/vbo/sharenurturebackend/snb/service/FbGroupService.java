@@ -27,7 +27,7 @@ public class FbGroupService {
                 new NoSuchFbGroupException("There is no fbGroup with the id: " + fbGroupId));
     }
 
-    public FbGroup addGroup(FbGroup fbGroup) throws NoSuchFbGroupException {
-        return fbGroupRepository.save(fbGroup);
+    public FbGroup addGroup(String fbGroupName, int fbGroupSize) throws NoSuchFbGroupException {
+        return fbGroupRepository.save(new FbGroup(fbGroupName, fbGroupSize));
     }
 }
